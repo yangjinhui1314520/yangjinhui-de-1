@@ -1,0 +1,21 @@
+# 定义 Python 解释器路径
+PYTHON ?= python3
+
+# 默认目标：运行程序
+.PHONY: all
+all: run
+
+# 运行 Python 程序
+.PHONY: run
+run: hello.py
+	$(PYTHON) hello.py
+
+# 查看文件内容
+.PHONY: cat
+cat:
+	cat hello.py
+
+# 清理（Python 程序一般不需要编译，这里只做占位）
+.PHONY: clean
+clean:
+	@echo "Python 程序无需清理"
